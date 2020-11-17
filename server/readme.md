@@ -17,14 +17,14 @@ Create a dynamic library type application that stores books and allows you to ad
   - [flask-marshmallow-docs](https://flask-marshmallow.readthedocs.io/)
 - Marshmallow-SQLAlchemy
   - [marshmallow-sqlalchemy-pypi](https://pypi.org/project/marshmallow-sqlalchemy/)
-  - [marshmallow-sqlalchemy-docs](https://marshmallow-sqlalchemy.readthedocs.io/en/latest/)
-- Flask-Bcrypt - [flask-bcrypt-pypi](https://pypi.org/project/Flask-Bcrypt/) - [flask-bcrypt-docs](https://flask-bcrypt.readthedocs.io/)
-  ​
+  - [marshmallow-sqlalchemy-docs](https://marshmallow-sqlalchemy.
+    ​
 
 ## Getting Started
 
 - download zip or clone
 - Install all dependencies
+- Make sure to be in the server folder when downloading so the enviornment is in the right spot
 
   ```
   $ pipenv install
@@ -39,32 +39,49 @@ Create a dynamic library type application that stores books and allows you to ad
   ```
   ​
 - Start your flask server
+
   ```
   $ python app.py
   ```
-  ​
+
+- Add Flask marshmallow-sqlalchemy
+  ```
+  $ pipenv install marshmallow-sqlalchemy flask
+  ```
 
 ## Flask Routes (test in postman or build a front-end)
 
-- Create User
+- Create Book
+
   - METHOD: `POST`
-  - URL: http://localhost:5000/api/register
+  - URL: http://localhost:5000/api/add-book
   - BODY: `application/json`
     ```json
     {
-      "username": "test",
-      "password": "test"
+      "title": "title",
+      "author": "author",
+      "url": "url",
+      "genre": "genre",
+      "star_rating": "1",
+      "book_read": false
     }
     ```
-- Login
-  - METHOD: `POST`
-  - URL: http://localhost:5000/api/login
-  - BODY: `application/json`
-    ```json
-    {
-      "username": "test",
-      "password": "test"
-    }
-    ```
-- GET All Users (For test purposes)
+
+- GET All Books
   - METHOD: `GET`
+  - URL: http://localhost:5000/api/books
+- Update Book-read
+
+  - METHOD: `PATCH`
+  - URL: http://localhost:5000/api/book-read/<id>
+  - BODY: `application/json`
+    ```json
+    {
+      "bookread": true
+    }
+    ```
+
+- DELETE a single book
+  - METHOD: `DELETE`
+  - URL: http://localhost:5000/api/delete-book/<id>
+    Collapse
