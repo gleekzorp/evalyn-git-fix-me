@@ -44,11 +44,6 @@ Create a dynamic library type application that stores books and allows you to ad
   $ python app.py
   ```
 
-- Add Flask marshmallow-sqlalchemy
-  ```
-  $ pipenv install marshmallow-sqlalchemy flask
-  ```
-
 ## Flask Routes (test in postman or build a front-end)
 
 - Create Book
