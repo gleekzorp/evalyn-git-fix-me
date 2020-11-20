@@ -40,7 +40,13 @@ Create a dynamic library type application that stores books and allows you to ad
   ​
 - Start your flask server
 
+  Make sure you're in the server folder
+  Then start your pip enviornment pipenv shell
+  Now run your app
+
   ```
+  $ cd server
+  $ pipenv shell
   $ python app.py
   ```
 
@@ -49,7 +55,7 @@ Create a dynamic library type application that stores books and allows you to ad
 - Create Book
 
   - METHOD: `POST`
-  - URL: http://localhost:5000/api/add-book
+  - URL: http://localhost:5000/add-book
   - BODY: `application/json`
     ```json
     {
@@ -63,8 +69,10 @@ Create a dynamic library type application that stores books and allows you to ad
     ```
 
 - GET All Books
+
   - METHOD: `GET`
   - URL: http://localhost:5000/api/books
+
 - Update Book-read
 
   - METHOD: `PATCH`
@@ -79,4 +87,3 @@ Create a dynamic library type application that stores books and allows you to ad
 - DELETE a single book
   - METHOD: `DELETE`
   - URL: http://localhost:5000/api/delete-book/<id>
-    Collapse
